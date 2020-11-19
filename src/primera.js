@@ -1,37 +1,58 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 
+import axios from 'axios';
+
+
 class primera extends Component {
-    
-    state={
-        user:{}
+
+    state = {
+        nombre: "",
+        usuario: {}
+    }
+
+    handleChange = input => e => {
+        console.log("cambio")
+        this.setState({ [input]: e.target.value });
+
+
     }
 
     componentWillMount(){
-        this.getUser();
+        this.getuser();
     }
 
-    getUser(){
+    getuser =() => {
+        console.log(this.state.nombre);
         axios.get('http://localhost:3900/api/user/Ana')
-            .then(res=>{
+            .then(res => {
+                console.log("hola");
                 this.setState({
-                    user:res.data.articles
-                }
-                )
+                    usuario: res.data.users
+
+                });
+
             })
-        
+
     }
+
+
 
     render() {
-       
         return (
-            <div id="Home">
-                <label>Nombre: {this.state.user}</label>
-                <label>correo: {this.state.correo}</label>
-              
-            </div>
-        );
+            <div>
+               
+               
+                    <div>
+                        <label>Name: {this.state.usuario.nombre}</label>
+                        <label>correo: {this.state.usuario.correo}</label>
+                    </div>
 
+                   
+                
+
+            </div>
+
+        );
     }
 }
 

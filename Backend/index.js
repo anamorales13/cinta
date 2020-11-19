@@ -13,7 +13,7 @@ var port= 3900;//variable puerto. El que queremos utilizar
 mongoose.set('useFindAndModify', false); 
 mongoose.Promise= global.Promise;
 
-mongoose.connect('mongodb+srv://anamorales13:vBac1UreWvszfgNe@plataforma.2cxua.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true})
+mongoose.connect('mongodb+srv://anamorales13:vBac1UreWvszfgNe@plataforma.2cxua.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log("La conexión a la BD se ha realizado con exito!");
 

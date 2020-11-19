@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Primera from './primera';
 
+
 function App() {
   return (
     <div className="App">
@@ -10,19 +11,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        
+        <Primera/>
+       
       </header>
-      <Primera/>
     </div>
   );
 }
 
 export default App;
+
